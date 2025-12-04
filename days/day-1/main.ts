@@ -16,6 +16,7 @@ async function readFileStreaming(path: string) {
     let direction: string = "";
     let distance: number = 0;
 
+<<<<<<< Updated upstream
     for await (const line of rl) {
         direction = line.substring(0, 1);
         distance = parseInt(line.substring(1));
@@ -27,6 +28,18 @@ async function readFileStreaming(path: string) {
             if(dial > 99) dial -= 100;
         }
         if(dial === 0) password++;
+=======
+    // grab a substr of each line
+
+    // get the direction and the distance => 'L30' would be Left 30 clicks (distance = 30)
+    // set the dial to the new position, take count of if it goes under 0 or over 99
+    // if after a rotation the dial is at 0, increase the password by 1
+    //    if dial === 0 then password++
+    for await (const line of rl) {
+        direction = line.substring(0, 1);
+        )
+        console.log(line)
+>>>>>>> Stashed changes
     }
     console.log(`Final password: ${password}`);
 }
